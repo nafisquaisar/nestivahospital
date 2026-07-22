@@ -8,6 +8,7 @@
 
 import type { Metadata } from "next";
 import type React from "react";
+import { Suspense } from "react";
 import { buildMetadata, siteUrl } from "@/config/seo";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
@@ -183,7 +184,27 @@ export default function AppointmentPage() {
             Appointment Request Form
           </h2>
           <Container>
-            <AppointmentForm />
+            {/*
+             * Suspense boundary is REQUIRED here.
+             * AppointmentForm calls useSearchParams() to read URL params for
+             * doctor / department pre-fill. Next.js 15 enforces that any
+             * Client Component using useSearchParams() must sit inside a
+             * <Suspense> boundary — otherwise the static prerender pass fails
+             * with "useSearchParams() should be wrapped in a suspense boundary".
+             *
+             * The fallback renders a height-reserved placeholder so the layout
+             * does not shift when the form hydrates on the client.
+             */}
+            <Suspense
+              fallback={
+                <div
+                  className="min-h-[600px] w-full animate-pulse rounded-2xl bg-muted/40"
+                  aria-hidden="true"
+                />
+              }
+            >
+              <AppointmentForm />
+            </Suspense>
           </Container>
         </section>
       </main>
