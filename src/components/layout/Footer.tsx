@@ -259,10 +259,12 @@ export function Footer() {
           <nav aria-label="Legal navigation">
             <ul className="flex flex-wrap gap-4">
               {[
-                { label: "Privacy Policy", href: "/privacy" },
-                { label: "Terms of Service", href: "/terms" },
-                { label: "Cookie Policy", href: "/cookies" },
-                { label: "Sitemap", href: "/sitemap.xml" },
+                { label: "Privacy Policy",    href: "/privacy-policy"       },
+                { label: "Terms & Conditions",href: "/terms-and-conditions" },
+                { label: "Cookie Policy",     href: "/cookies"              },
+                { label: "Accessibility",     href: "/accessibility"        },
+                { label: "Website Map",       href: "/website-map"          },
+                { label: "Sitemap",           href: "/sitemap.xml"          },
               ].map((item) => (
                 <li key={item.href}>
                   <Link
