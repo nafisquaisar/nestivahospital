@@ -55,12 +55,12 @@ function buildHospitalSchema() {
       addressLocality:   branding.address.city,
       addressRegion:     branding.address.state,
       postalCode:        branding.address.zip,
-      addressCountry:    "US",
+      addressCountry:    "IN",
     },
     geo: {
       "@type":    "GeoCoordinates",
-      latitude:   "40.7128",
-      longitude: "-74.0060",
+      latitude:   "28.5519",
+      longitude: "77.1809",
     },
     openingHoursSpecification: {
       "@type":       "OpeningHoursSpecification",

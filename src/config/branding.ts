@@ -22,34 +22,34 @@ export const branding = {
   /** Logo paths (relative to /public) */
   logo: {
     /** Full horizontal logo */
-    full: "/assets/logo/logo-full.svg",
+    full: "/assets/logo/logo-full-bg.png",
     /** Square / icon-only logo */
-    icon: "/assets/logo/logo-icon.svg",
+    icon: "/assets/logo/logo-full-bg.png",
     /** Dark-mode variant */
-    dark: "/assets/logo/logo-dark.svg",
+    dark: "/assets/logo/logo-full-bg.png",
   },
 
   /** Favicon path (relative to /public) */
   favicon: "/favicon.ico",
 
   /** Primary contact email */
-  email: "info@nestiva.hospital",
+  email: "nestivahospital@gmail.com",
 
   /** General enquiries phone */
-  phone: "+1 (800) 637-8482",
+  phone: "011-42422000",
 
   /** 24/7 emergency hotline */
-  emergencyPhone: "+1 (800) 911-0000",
+  emergencyPhone: "011-42422000",
 
   /** Physical address */
   address: {
-    street: "123 Medical Center Drive",
-    city: "New York",
-    state: "NY",
-    zip: "10001",
-    country: "United States",
+    street: "384, JS Complex, near Indane Gas godown, Munirka",
+    city: "New Delhi",
+    state: "Delhi",
+    zip: "110068",
+    country: "India",
     /** Full single-line version */
-    full: "123 Medical Center Drive, New York, NY 10001, United States",
+    full: "384, JS Complex, near Indane Gas godown, Munirka, New Delhi-110068",
   },
 
   /** Social media links */

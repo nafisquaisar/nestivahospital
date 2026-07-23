@@ -13,32 +13,32 @@ export interface WorkingHour {
 
 export const contact = {
   /** Primary contact email */
-  email: "info@nestiva.hospital",
+  email: "nestivahospital@gmail.com",
 
   /** Appointment-specific email */
-  appointmentEmail: "appointments@nestiva.hospital",
+  appointmentEmail: "nestivahospital@gmail.com",
 
   /** Support email */
-  supportEmail: "support@nestiva.hospital",
+  supportEmail: "nestivahospital@gmail.com",
 
   /** General enquiries phone */
-  phone: "+1 (800) 637-8482",
+  phone: "011-42422000",
 
   /** 24/7 emergency hotline */
-  emergencyPhone: "+1 (800) 911-0000",
+  emergencyPhone: "011-42422000",
 
   /** Outpatient department */
-  opdPhone: "+1 (800) 637-1111",
+  opdPhone: "011-42422000",
 
   /** Physical address */
   address: {
-    street: "123 Medical Center Drive",
-    city: "New York",
-    state: "NY",
-    zip: "10001",
-    country: "United States",
+    street: "384, JS Complex, near Indane Gas godown, Munirka",
+    city: "New Delhi",
+    state: "Delhi",
+    zip: "110068",
+    country: "India",
     /** Full single-line version */
-    full: "123 Medical Center Drive, New York, NY 10001, United States",
+    full: "384, JS Complex, near Indane Gas godown, Munirka, New Delhi-110068",
   },
 
   /** Working hours */
@@ -64,13 +64,13 @@ export const contact = {
 
   /** Google Maps embed URL */
   mapUrl:
-    "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.215!2d-74.006!3d40.7128!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDDCsDQyJzQ2LjEiTiA3NMKwMDAnMjEuNiJX!5e0!3m2!1sen!2sus!4v0000000000000",
+    "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3503.1641!2d77.17649!3d28.55189!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d1b50e3e36b5d%3A0x5a0c0e8f3e4c0e6a!2sMunirka%2C%20New%20Delhi%2C%20Delhi%20110067!5e0!3m2!1sen!2sin!4v1700000000000",
 
   /** Direct Google Maps link */
-  mapsLink: "https://goo.gl/maps/example",
+  mapsLink: "https://maps.google.com/?q=Munirka,+New+Delhi,+Delhi+110068",
 
   /** WhatsApp number for quick contact */
-  whatsapp: "+18006378482",
+  whatsapp: "01142422000",
 } as const;
 
 export type Contact = typeof contact;

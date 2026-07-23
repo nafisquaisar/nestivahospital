@@ -1,19 +1,21 @@
 /**
  * Logo
- * Server Component — renders hospital logo + name.
- * Values sourced from branding config.
+ * ─────────────────────────────────────────────────────────────────────────────
+ * Renders the Nestiva logo image with transparent background.
+ * Uses Next.js <Image> for automatic optimisation (WebP, lazy-load, etc.).
+ * Values sourced from branding config — no hardcoding.
  */
 
 import Link from "next/link";
-import { Stethoscope } from "lucide-react";
+import Image from "next/image";
 import { cn } from "@/utils";
 import { branding } from "@/config/branding";
 
 interface LogoProps {
   className?: string;
-  /** Compact mode hides the "Hospital" sub-label */
+  /** Compact mode — slightly smaller on mobile */
   compact?: boolean;
-  /** White variant for dark backgrounds */
+  /** White/inverted variant for dark backgrounds */
   white?: boolean;
 }
 
@@ -21,43 +23,28 @@ export function Logo({ className, compact = false, white = false }: LogoProps) {
   return (
     <Link
       href="/"
-      className={cn("group flex items-center gap-2.5", className)}
+      className={cn(
+        "group inline-flex shrink-0 items-center",
+        "transition-opacity duration-200 hover:opacity-85 focus-visible:outline-none",
+        "focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 rounded-sm",
+        className
+      )}
       aria-label={`${branding.name} — go to homepage`}
     >
-      {/* Icon mark */}
-      <div
+      <Image
+        src={branding.logo.full}
+        alt={branding.name}
+        width={compact ? 120 : 150}
+        height={compact ? 40 : 50}
+        priority
+        quality={100}
         className={cn(
-          "flex h-9 w-9 shrink-0 items-center justify-center rounded-xl shadow-sm transition-transform group-hover:scale-105",
-          white ? "bg-white/20 border border-white/30" : "bg-primary"
+          "object-contain object-left transition-transform duration-200 group-hover:scale-[1.02]",
+          /* Invert to white on dark backgrounds */
+          white && "brightness-0 invert"
         )}
-      >
-        <Stethoscope
-          className={cn("h-5 w-5", white ? "text-white" : "text-primary-foreground")}
-          aria-hidden="true"
-        />
-      </div>
-
-      {/* Word mark */}
-      <div className={cn("leading-none", compact && "hidden sm:block")}>
-        <span
-          className={cn(
-            "block font-display text-[15px] font-bold tracking-tight",
-            white ? "text-white" : "text-foreground"
-          )}
-        >
-          {branding.shortName}
-        </span>
-        {!compact && (
-          <span
-            className={cn(
-              "block text-[10px] font-medium tracking-widest uppercase mt-0.5",
-              white ? "text-white/70" : "text-muted-foreground"
-            )}
-          >
-            Hospital
-          </span>
-        )}
-      </div>
+        style={{ background: "transparent" }}
+      />
     </Link>
   );
 }

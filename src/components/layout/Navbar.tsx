@@ -27,7 +27,7 @@ import Link from "next/link";
 
 /* Separate CTA item from standard nav links */
 const navItems = navigation.filter((item) => !item.isCta);
-const ctaItem  = navigation.find((item) => item.isCta);
+const ctaItem = navigation.find((item) => item.isCta);
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
